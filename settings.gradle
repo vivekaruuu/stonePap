@@ -1,0 +1,2 @@
+rootProject.name='StonePapSis'
+include ':app'
