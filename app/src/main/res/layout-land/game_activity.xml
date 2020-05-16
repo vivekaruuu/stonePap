@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightpink">
+
+    <ImageView
+        android:id="@+id/rock"
+        android:layout_width="116dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="onClick"
+        android:tag="1"
+        app:layout_constraintBottom_toBottomOf="@+id/scissor"
+        app:layout_constraintEnd_toStartOf="@+id/scissor"
+        app:layout_constraintTop_toTopOf="@+id/scissor"
+        app:srcCompat="@drawable/rock" />
+
+    <ImageView
+        android:id="@+id/imgDisp1"
+        android:layout_width="102dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayBar"
+        app:layout_constraintStart_toStartOf="@+id/Score1"
+        app:layout_constraintTop_toBottomOf="@+id/Score1" />
+
+    <ImageView
+        android:id="@+id/imgDisp2"
+        android:layout_width="104dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayBar"
+        app:layout_constraintEnd_toEndOf="@+id/Score2"
+        app:layout_constraintTop_toBottomOf="@+id/Score2" />
+
+    <ImageView
+        android:id="@+id/paper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="onClick"
+        android:tag="2"
+        app:layout_constraintBottom_toBottomOf="@+id/displayBar"
+        app:layout_constraintEnd_toEndOf="@+id/scissor"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/rock"
+        app:layout_constraintTop_toBottomOf="@+id/scissor"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageView
+        android:id="@+id/scissor"
+        android:layout_width="110dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="50dp"
+        android:onClick="onClick"
+        android:tag="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scissors" />
+
+    <TextView
+        android:id="@+id/Score1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="90dp"
+        android:text="PLayer1\n0"
+        android:textColor="@color/myred"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toStartOf="@+id/Score2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Score2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:text="Player2\n0"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/myblue"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Score1"
+        app:layout_constraintEnd_toStartOf="@+id/rock"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="vs"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/displayBar"
+        app:layout_constraintEnd_toStartOf="@+id/imgDisp2"
+        app:layout_constraintStart_toEndOf="@+id/imgDisp1" />
+
+    <TextView
+        android:id="@+id/displayBar"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="35dp"
+        android:text="player 1 chance"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/paper"
+        app:layout_constraintStart_toStartOf="@+id/Score1" />
+
+    <TextView
+        android:id="@+id/ResultView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="PLAYER 1 \n WINs"
+        android:textAlignment="center"
+        android:textColor="@color/myblue"
+        android:textSize="36sp"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

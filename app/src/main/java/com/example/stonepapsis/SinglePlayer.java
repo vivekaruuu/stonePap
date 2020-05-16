@@ -71,11 +71,14 @@ public class SinglePlayer extends AppCompatActivity {
         }
     }
     private void DelayFunction() {
-
+       // imgDisp1.animate().alpha(0).setDuration(1800);
+        //imgDisp2.animate().alpha(0).setDuration(1800);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+               //imgDisp2.animate().alpha(1);
+               //imgDisp1.animate().alpha(1);
                 imgDisp1.setImageDrawable(null);
                 imgDisp2.setImageDrawable(null);
                 displayBar.setText(MainActivity.Name1+ "'s chance");
@@ -84,6 +87,7 @@ public class SinglePlayer extends AppCompatActivity {
                 if(presentRound==Integer.parseInt(MainActivity.Rounds)){
                     roundEnd();
                 }
+
 
             }
         }, 2000);

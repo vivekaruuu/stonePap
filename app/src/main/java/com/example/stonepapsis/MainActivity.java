@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     EditText name1;
     EditText name2;
     EditText rounds;
+    TextView playerText;
     int selected1=1,selected2=1;
 
     public void buttonEffect(View view){
@@ -35,9 +37,12 @@ public class MainActivity extends AppCompatActivity {
                 button2.getBackground().clearColorFilter();
                 selected2=1;
 
+
             }else{
                 button1.getBackground().setColorFilter(0xe0f47521,PorterDuff.Mode.SRC_ATOP);
             }
+            playerText.setVisibility(View.VISIBLE);
+            name2.setVisibility(View.VISIBLE);
             selected1=2;
 
         }
@@ -46,11 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 button2.getBackground().setColorFilter(0xe0f47521,PorterDuff.Mode.SRC_ATOP);
                 button1.getBackground().clearColorFilter();
                 selected1=1;
+
             }
             else{
                 button2.getBackground().setColorFilter(0xe0f47521,PorterDuff.Mode.SRC_ATOP);
+
             }
             selected2=2;
+            playerText.setVisibility(View.GONE);
+            name2.setVisibility(View.GONE);
         }
 
     }
@@ -91,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         name2=findViewById(R.id.name2);
         name1=findViewById(R.id.name1);
         rounds=findViewById(R.id.rounds);
+        playerText=findViewById(R.id.playerText);
         name1.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
         name2.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
 
